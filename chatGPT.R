@@ -12,7 +12,7 @@
 
 library(chatgpt)
 
-## If you have set up enviornment variable in `~/.Renviron`
+## If you have set up environment variable in `~/.Renviron`
 ## You don't have to do anything
 # Sys.getenv("OPENAI_API_KEY") ## you can get if the environment variable is working
 
@@ -20,24 +20,40 @@ library(chatgpt)
 ## please specify your OPENAI_API key here
 # OPENAI_API_KEY = "your_api_key_here" ## uncomment to specify API
 
-Sys.setenv(OPENAI_MAX_TOKENS = 2048)
+Sys.setenv(OPENAI_MAX_TOKENS = 2048) ## max for `gpt-3.5-turbo`;  8092 tokens for `gpt-4` !!!
 Sys.setenv(OPENAI_VERBOSE = FALSE)
+
+## ask_chatgpt(
+##     "You are a professional R instructor. When you answer the questions, you would try to be as humorous as possible. Your language should be intuitive, humorous, and easily attract student's attention."
+##   )
 
 writeLines(
   ask_chatgpt(
-    "You are a R instructor. Can you give me a few specific suggestions on how to start learning the R programming language?"
+    "You are a professional R instructor. Can you give me a few specific suggestions on how to start learning the R programming language?"
   ) ## endask
 ) ## endwrite
 
 writeLines(
   ask_chatgpt(
-    "Could you explain what a data scientist needs for their career?"
+    "Could you explain what technical skills a data scientist needs for their career?"
     ) ## endask
   ) ## endwrite
 
 writeLines(
   ask_chatgpt(
-    "Can you tell us which programming language is better, python or R?"
+    "Can you tell us which programming language is better, Python or R?"
+    ) ## endask
+  ) ## endwrite
+
+writeLines(
+  ask_chatgpt(
+    "As a humanities student, I'm more comfortable with Shakespeare than with Python. Can you explain why I need to learn programming, besides the fact that it pays better than reciting sonnets on the street corner?"
+    ) ## endask
+  ) ## endwrite
+
+writeLines(
+  ask_chatgpt(
+    "How do you convince humanities students who would rather run a marathon in stilettos than sit through a statistics class that the subject is actually important and could make a significant impact on their career trajectory?"
     ) ## endask
   ) ## endwrite
 
