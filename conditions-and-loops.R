@@ -146,16 +146,19 @@ for(i in 1:length(word_vec)){
 ## Please run the entire code chunk all at once! ##
 ## --------------------------------------------  ##
 
-ans <- 90
-guess <- 83
-while (guess != ans) {
-  cat("Your `guess` is too small! \nThe system will take care for you!\n")
-  guess <- guess + 1
-  cat("Now the system is adjusting your `guess` to ", guess, "\n\n")
-}
+## Create a program
+app_v1 <- function(ans = 90, guess = 83) {
+  while (guess != ans) {
+    cat("Your `guess` is too small! \nThe system will take care for you!\n")
+    guess <- guess + 1
+    cat("Now the system is adjusting your `guess` to ", guess, "\n\n")
+  } ## endwhile
+  
+  cat('Great! The passcode is finally cracked.\n')
+} ## endfunc
 
-cat('Great! The passcode is finally cracked.\n')
-
+## Run the program
+app_v1(ans = 90, guess = 83)
 
 
 
