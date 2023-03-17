@@ -14,18 +14,16 @@ library(chatgpt)
 
 ## If you have set up environment variable in `~/.Renviron`
 ## You don't have to do anything
-# Sys.getenv("OPENAI_API_KEY") ## you can get if the environment variable is working
+# Sys.getenv("OPENAI_API_KEY") ## double check if the environment variable is working
 
 ## If you have not set up the environment variable,
 ## please specify your OPENAI_API key here
-# OPENAI_API_KEY = "your_api_key_here" ## uncomment to specify API
+# Sys.setenv(OPENAI_API_KEY = "your_api_key_here") ## uncomment to specify API
 
 Sys.setenv(OPENAI_MAX_TOKENS = 2048) ## max for `gpt-3.5-turbo`;  8092 tokens for `gpt-4` !!!
 Sys.setenv(OPENAI_VERBOSE = FALSE)
 
-## ask_chatgpt(
-##     "You are a professional R instructor. When you answer the questions, you would try to be as humorous as possible. Your language should be intuitive, humorous, and easily attract student's attention."
-##   )
+
 
 writeLines(
   ask_chatgpt(
