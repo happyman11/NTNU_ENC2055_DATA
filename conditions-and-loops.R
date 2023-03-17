@@ -66,18 +66,19 @@ a|b
 
 
 
-input <- 113 # assuming that you have the input 113
-
-## Assuming that the system pass code is `987`
-
-if(input == 987){
+correct_passcode <- 987  ## system correct passcode
+input <- 113 ## assuming that you have the input 113
+## Passcode checking & output
+if(input == correct_passcode){
   writeLines("Congratulations! Now you may get in!")
 } else{
   writeLines("Sorry! Wrong password.")
 }
 
-input <- 987 # assuming that you have the input 987
-if(input == 987){
+correct_passcode <- 987  ## system correct passcode
+input <- 987 ## assuming that you have the input 987
+## Passcode checking & output
+if(input == correct_passcode){
   writeLines("Congratulations! Now you may get in!")
 } else{
   writeLines("Sorry! Wrong password.")
@@ -87,11 +88,14 @@ if(input == 987){
 ## ## Run the entire code chunk all at once ##
 ## ## ------------------------------------- ##
 ## 
+## ## System Correct Passcode
+## correct_passcode <- 987
+## 
 ## ## User's input
 ## input <- readline(prompt = "Please enter your password:")
 ## 
 ## ## Passcode checking & output
-## if (input == 987) {
+## if (input == correct_passcode) {
 ##   writeLines("Congratulations! Now you may get in!")
 ## } else {
 ##   writeLines("Sorry! Wrong password.")
