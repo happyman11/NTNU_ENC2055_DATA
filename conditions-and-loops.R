@@ -180,6 +180,9 @@ guessMyNumber <- function() {
   ## Randomly select an integer from 1 to 100
   ans <- sample(1:100, size = 1)
   
+  ## Initialize the variable `guess`
+  guess <- -1
+  
   ## Instructions for user
   writeLines("Now I am thinking of a number between 1 and 100.")
   
@@ -205,3 +208,69 @@ guessMyNumber <- function() {
 } ## endfunc
 
 ## guessMyNumber()
+
+## --------------------------------------------  ##
+## Please run the entire code chunk all at once! ##
+## --------------------------------------------  ##
+
+## Create a function object
+guessMyNumber_1 <- function(guess) {
+  ## Randomly select an integer from 1 to 100
+  ans <- sample(1:100, size = 1)
+  
+  ## Instructions for user
+  writeLines("Now I am thinking of a number between 1 and 100.")
+  
+  ## As long as user's guess is not the answer
+  while (guess != ans) {
+    ## Read the prompt input from user
+    guess <- readline(prompt = "Please guess my number(1~100):")
+    
+    ## Convert input string into integer
+    guess <- as.numeric(guess)
+    
+    ## if user's guess is smaller than the answer
+    if (guess < ans) {
+      writeLines("The answer is HIGHER.")
+    ## if user's guess is larger than the answer
+    } else if (guess > ans) {
+      writeLines("The answer is LOWER")
+    ## correct guess
+    } else{
+      writeLines(paste0("Good Job! You had the correct answer! My number is ", guess))
+    } ## endif
+  } ## endwhile
+} ## endfunc
+
+## --------------------------------------------  ##
+## Please run the entire code chunk all at once! ##
+## --------------------------------------------  ##
+
+## Create a function object
+guessMyNumber_2 <- function(guess = -1) {
+  ## Randomly select an integer from 1 to 100
+  ans <- sample(1:100, size = 1)
+  
+  ## Instructions for user
+  writeLines("Now I am thinking of a number between 1 and 100.")
+  
+  ## As long as user's guess is not the answer
+  while (guess != ans) {
+    ## Read the prompt input from user
+    guess <- readline(prompt = "Please guess my number(1~100):")
+    
+    ## Convert input string into integer
+    guess <- as.numeric(guess)
+    
+    ## if user's guess is smaller than the answer
+    if (guess < ans) {
+      writeLines("The answer is HIGHER.")
+    ## if user's guess is larger than the answer
+    } else if (guess > ans) {
+      writeLines("The answer is LOWER")
+    ## correct guess
+    } else{
+      writeLines(paste0("Good Job! You had the correct answer! My number is ", guess))
+    } ## endif
+  } ## endwhile
+} ## endfunc
