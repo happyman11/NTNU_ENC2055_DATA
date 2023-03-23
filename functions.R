@@ -13,6 +13,16 @@ hello(name='Alvin')
 
 cat(name)
 
+hello <- function(name = "Alvin"){
+  cat('How are you doing,', name)
+} 
+
+## call 1
+hello()
+
+## call 2
+hello(name = "Superman")
+
 num <- sample(1:10, 3)
 num
 
@@ -108,39 +118,38 @@ myLog(100, 10)
 myLog(8, 2)
 
 ## Not OK
-myLog(10, -1) # base is negative
-myLog(-10, 10) # x is negative
-myLog("100", 10) # x is not numeric
+myLog(10, -1) ## base is negative
+myLog(-10, 10) ## x is negative
+myLog("100", 10) ## x is not numeric
 
 
 
 myLog <- function(x, myBase) {
   tryCatch({
-    #----- original_code -----#
+    ##----- original_code -----##
     return(log(x, myBase))
     
   }, warning = function(w) {
-    #----- warning_handler_code -----#
+    ##----- warning_handler_code -----##
     if (x < 0)
-      print('`x` must be a positive number')
+      print('WARNING!! `x` must be a positive number')
     if (myBase < 0)
-      print('`myBase` must be a positive number')
+      print('WARNING!! `myBase` must be a positive number')
     
   }, error = function(e) {
-    #----- error_handler_code -----#
+    ##----- error_handler_code -----##
     if (!is.numeric(x) | !is.numeric(myBase))
-      print('Either `x` or `myBase` must be a positive number not a string')
+      print('ERROR!! Either `x` or `myBase` must be a positive number not a string')
     
   }, finally = {
-    #----- cleanup_code (optional) -----#
+    ##----- cleanup_code (optional) -----##
      ## print('Functin completed!!')
     
   }) ## endtrycatch
 } ## endfunc
 
 myLog(100,10)
-myLog(100, exp(1))
- ## log(100) ## same as above
-myLog(10,-1)
-myLog('w12',0)
-myLog(8,"2")
+myLog(100, exp(1)) ## same as `log(100)` with natural E as the base
+myLog(10,-1) ## Warning
+myLog('w12',0) ## Error
+myLog(8,"2") ## Error

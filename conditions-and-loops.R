@@ -50,7 +50,7 @@ a|b
 ## z <- xor(x %in% y, y %in% x)
 ## print(z)
 ## 
-## # Inexclusive OR
+## # Inclusive OR
 ## z2 <- x %in% y | y %in% x
 ## print(z2)
 
