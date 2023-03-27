@@ -153,3 +153,31 @@ myLog(100, exp(1)) ## same as `log(100)` with natural E as the base
 myLog(10,-1) ## Warning
 myLog('w12',0) ## Error
 myLog(8,"2") ## Error
+
+x <- c(1:10) ## num vec
+y <- letters[1:10] ## char vec
+z <- factor(y)## factor
+
+cat(x) ## cat numbers
+
+cat(y) ## cat characters
+
+cat(z) ## cat factor 
+
+cat("Numbers:", x, "Characters:", y) ## concatenated strings
+
+writeLines(y) ## char vec
+
+writeLines(x) ## !!Not working with num vec
+
+writeLines(z) ## !!Not Working with factor
+
+writeLines("Characters:", y) ## !! Not Working..
+
+print(x) ## print num vec
+
+print(y) ## print char vec
+
+print(z) ## print factor
+
+print(x, y)
