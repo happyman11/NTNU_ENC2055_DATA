@@ -145,7 +145,8 @@ ggplot(data = mpg, aes(x = displ, y = hwy, color = drv)) +
   geom_point() +
   labs(x = "Engine Displacement (litres)",
        y = "Highway Miles per Gallon",
-       title = "Scatter Plot -- DISPL by HWY")
+       title = "Scatter Plot -- DISPL by HWY",
+       color = "Drive Train Type")
 
 ggplot(data = mpg, aes(x = cty, y = hwy)) +
   geom_point() +
@@ -154,10 +155,13 @@ ggplot(data = mpg, aes(x = cty, y = hwy)) +
 
 ## Save the ggplot2 object
 graph1 <- ggplot(data = mpg, aes(x = displ, y = hwy, color = drv)) +
-  geom_point() +
-  labs(x = "Engine Displacement (litres)",
-       y = "Highway Miles per Gallon",
-       title = "Scatter Plot -- DISPL by HWY")
+  geom_point(size = 3, alpha = .8) +
+  labs(
+    x = "Engine Displacement (litres)",
+    y = "Highway Miles per Gallon",
+    title = "Scatter Plot -- DISPL by HWY",
+    color = "Drive Train Type"
+  )
 
 ## autoprint the graph
 graph1
