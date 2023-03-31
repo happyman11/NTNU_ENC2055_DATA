@@ -1,3 +1,35 @@
+## load data
+library(tidyverse)
+df <- read_csv("demo_data/data-datasaurus.csv")
+
+
+
+
+
+## df %>%
+##   group_by(group) %>%
+##   summarize(
+##     mean_x = mean(x),
+##     mean_y = mean(y),
+##     std_dev_x = sd(x),
+##     std_dev_y = sd(y),
+##   )
+
+ggplot(df, aes(x = x, y = y, color = group)) +
+  geom_point(alpha = .7, size = .8) +
+  theme(legend.position = "none") +
+  facet_wrap( ~ group, ncol = 3) +
+  labs(title = "Scatter Plots of Each Group",
+       x = "X Values", y = "Y Values")
+
+
+
+
+
+
+
+
+
 library(tidyverse)
 
 mpg 
