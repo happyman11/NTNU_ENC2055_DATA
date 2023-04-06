@@ -112,6 +112,35 @@ ggplot(data = mpg, aes(x = manufacturer, y = class)) +
 
 
 
+## aes can be put in `ggplot()`
+ggplot(data = mpg, aes(x = class)) + 
+  stat_count()
+
+## or `stat_count()
+ggplot(data = mpg) +
+  stat_count(aes(x=class))
+
+## We can change the default geom in stat_count()
+ggplot(data = mpg, aes(x = class)) +
+   stat_count(geom = "point")
+
+ggplot(data = mpg, aes(x = class)) +
+  stat_count(
+    aes(y = after_stat(prop), 
+        group =1),
+    geom="bar", 
+    fill="white",
+    color="lightgrey"
+  ) +
+   stat_count(
+    aes(y = after_stat(prop),
+        label = round(after_stat(prop),2), 
+        group =1),
+    geom= "text",
+    color = "royalblue"
+  ) 
+  
+
 ggplot(data = mpg, aes(x = displ, y = hwy)) + 
   geom_point()
 

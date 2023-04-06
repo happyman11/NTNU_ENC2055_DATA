@@ -143,7 +143,7 @@ myLog <- function(x, myBase) {
     
   }, finally = {
     ##----- cleanup_code (optional) -----##
-     ## print('Functin completed!!')
+     ## print('Function completed!!')
     
   }) ## endtrycatch
 } ## endfunc
