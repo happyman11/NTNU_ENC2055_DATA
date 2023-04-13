@@ -149,7 +149,7 @@ ggplot(data = mpg,
   geom_point()
 
 ## Method 1
-ggplot(data = mpg, aes(x = displ, y = hwy, color = drv)) + 
+ggplot(data = mpg, aes(x = displ, y = hwy, color = drv)) +
   geom_point()
 
 ## Method 2
