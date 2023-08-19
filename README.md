@@ -1,6 +1,6 @@
 # NTNU_ENC2055_DATA
 
-## https://github.com/happyman11/NTNU_ENC2055_DATA
+## R Course
 
 <div id="header" align="center">
   <img src="https://media.giphy.com/media/M9gbBd9nbDrOTu1Mqx/giphy.gif" width="100"/>
